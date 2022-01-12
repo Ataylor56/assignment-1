@@ -35,7 +35,7 @@
           <button class="btn btn-outline-primary modal-postauth">About</button>
         </li>
         <li class="nav-item">
-          <button class="btn btn-outline-danger modal-postauth">Sign Out</button>
+          <button id="menu-signout" class="btn btn-outline-danger modal-postauth">Sign Out</button>
         </li>
       </ul>
       <div class="modal-postauth">
@@ -47,7 +47,7 @@
     </div>
   </nav>
 
-  <!-- Modal -->
+  <!-- Sign In Modal -->
   <div class="modal fade" id="modal-signin-form" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="modal-signin-form-label" aria-hidden="true" role="dialog">
     <div class="modal-dialog">
@@ -57,7 +57,33 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
         </div>
         <div class="modal-body">
-          <form method="post">
+          <form id="form-signin" method="post">
+            <div>
+              <input type="email" name="email" placeholder="email address">
+            </div>
+            <div>
+              <input type="password" name="password" placeholder="password">
+            </div>
+            <div>
+              <button class="btn btn-outline-primary" type="submit">Sign In</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup Info Box Modal -->
+  <div class="modal fade" id="modal-infobox" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="modal-infobox-title" aria-hidden="true" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-infobox-title">Title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
+        </div>
+        <div class="modal-body" id="modal-infobox-body">
+          <form id="form-signin" method="post">
             <div>
               <input type="email" name="email" placeholder="email address">
             </div>
