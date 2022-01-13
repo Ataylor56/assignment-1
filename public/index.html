@@ -13,10 +13,11 @@
   <title>Discussion Forum</title>
 </head>
 
-<body>
+<body class="bg-light">
   <!-- Banner -->
   <div class="my-banner">Awesome Discussion Form</div>
   <!-- Banner -->
+
   <!-- Nav Bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -31,10 +32,10 @@
               In</button>
           </li>
           <li class="nav-item">
-            <button class="btn btn-outline-primary modal-postauth">Home</button>
+            <button id="menu-home" class="btn btn-outline-primary modal-postauth">Home</button>
           </li>
           <li class="nav-item">
-            <button class="btn btn-outline-primary modal-postauth">About</button>
+            <button id="menu-about" class="btn btn-outline-primary modal-postauth">About</button>
           </li>
           <li class="nav-item">
             <button id="menu-signout" class="btn btn-outline-danger modal-postauth">Sign Out</button>
@@ -48,6 +49,7 @@
     </div>
   </nav>
   <!-- Nav Bar -->
+
   <!-- Sign In Modal -->
   <div class="modal fade" id="modal-signin-form" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="modal-signin-form-label" aria-hidden="true" role="dialog">
@@ -91,6 +93,10 @@
     </div>
   </div>
   <!-- Popup Info Box Modal -->
+
+  <!-- MAIN ROOT -->
+  <div id='root' class="bg-light m-3 p-4"></div>
+  <!-- MAIN ROOT -->
 
   <!-- Optional JavaScript -->
 

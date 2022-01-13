@@ -1,13 +1,22 @@
+body {
+    font-family: 'Roboto';
+}
+
 .my-banner {
     width:100%;
     font-size: 200%;
     text-align: center;
-    color: white;
-    background-color: navy;
+    color: black;
+    background: linear-gradient(to bottom, #084298cf, #08429800);
 }
 
 li.nav-item {
     padding: 12px;
+}
+ 
+#navbarSupportedContent > form > button {
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 
 .modal-preauth {
@@ -15,7 +24,7 @@ li.nav-item {
 }
 
 .modal-postauth {
-    display: block;
+    display: none;
 }
 
 input {
