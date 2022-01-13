@@ -1,7 +1,7 @@
 {
 	"hosting": {
 		"public": "public",
-		"site": "a1p1-austintaylor.web.app",
+		"site": "a1p1-austintaylor",
 		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
 		"rewrites": [
 			{
