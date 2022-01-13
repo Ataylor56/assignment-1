@@ -1,27 +1,24 @@
 {
-  "hosting": {
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  },
-  "emulators": {
-    "functions": {
-      "port": 5334
-    },
-    "hosting": {
-      "port": 5333
-    },
-    "ui": {
-      "enabled": true
-    }
-  }
+	"hosting": {
+		"public": "public",
+		"site": "a1p1-austintaylor.web.app",
+		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+		"rewrites": [
+			{
+				"source": "**",
+				"destination": "/index.html"
+			}
+		]
+	},
+	"emulators": {
+		"functions": {
+			"port": 5334
+		},
+		"hosting": {
+			"port": 5333
+		},
+		"ui": {
+			"enabled": true
+		}
+	}
 }

@@ -1,36 +1,52 @@
 body {
-    font-family: 'Roboto';
+	font-family: 'Roboto';
 }
 
 .my-banner {
-    width:100%;
-    font-size: 200%;
-    text-align: center;
-    color: black;
-    background: linear-gradient(to bottom, #084298cf, #08429800);
+	width: 100%;
+	font-size: 200%;
+	text-align: center;
+	color: black;
+	background: linear-gradient(to bottom, #084298cf, #08429800);
+}
+
+.btn {
+	font-weight: 500;
+	border-radius: 20px;
+}
+
+.btn-circle {
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+	background: linear-gradient(352deg, #0d6efdad, transparent);
+	padding: 10px 16px;
+	font-size: 16px;
+	font-weight: bolder;
+	line-height: 1;
 }
 
 li.nav-item {
-    padding: 12px;
+	padding: 12px;
 }
- 
+
 #navbarSupportedContent > form > button {
-    margin-top: 6px;
-    margin-bottom: 6px;
+	margin-top: 6px;
+	margin-bottom: 6px;
 }
 
 .modal-preauth {
-    display: block;
+	display: block;
 }
 
 .modal-postauth {
-    display: none;
+	display: none;
 }
 
 input {
-    display: block;
-    margin: 8px 0;
-    padding: 8px 2px;
-    border-width: 0 0 2px 0;
-    width: 100%;
+	display: block;
+	margin: 8px 0;
+	padding: 8px 2px;
+	border-width: 0 0 2px 0;
+	width: 100%;
 }

@@ -8,7 +8,14 @@ Home.addEventListeners();
 About.addEventListeners();
 
 window.onload = () => {
-    const pathname = window.location.pathname;
-    const hash = window.location.hash;
-    routing(pathname, hash);
-}
+	const pathname = window.location.pathname;
+	const hash = window.location.hash;
+	routing(pathname, hash);
+};
+
+window.addEventListener('popstate', (e) => {
+	e.preventDefault(); //no refreshing
+	const pathname = e.target.location.pathname;
+	const hash = e.target.location.hash;
+	routing(pathname, hash);
+});

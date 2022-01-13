@@ -94,6 +94,36 @@
   </div>
   <!-- Popup Info Box Modal -->
 
+    <!-- New Thread Modal -->
+    <div class="modal fade" id="modal-create-thread" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="modal-create-thread-label" aria-hidden="true" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-create-thread-label">Create new Thread</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modal-create-thread-body">
+          <form id="form-create-thread" method="post">
+            <div>
+              <input type="text" name="title" placeholder="Title of the thread" required minlength="2">
+            </div>
+            <div>
+              <input type="text" name="keywords" placeholder="Search keys seperated by a blank" required minlength="2">
+            </div>
+            <div>
+              <textarea name="content" cols="50" rows="5" placeholder="Content of the thread" required minlength="5"></textarea>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-outline-danger">Create</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- New Thread Modal -->
+
   <!-- MAIN ROOT -->
   <div id='root' class="bg-light m-3 p-4"></div>
   <!-- MAIN ROOT -->
