@@ -4,6 +4,8 @@ export const root = document.getElementById('root');
 // forms
 export const formSignIn = document.getElementById('form-signin');
 export const formCreateThread = document.getElementById('form-create-thread');
+export const formSearch = document.getElementById('form-search');
+
 // menu buttons
 export const menuSignOut = document.getElementById('menu-signout');
 export const menuHome = document.getElementById('menu-home');

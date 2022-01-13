@@ -50,3 +50,8 @@ input {
 	border-width: 0 0 2px 0;
 	width: 100%;
 }
+
+textarea {
+	width: 95%;
+	min-height: 150px;
+}
