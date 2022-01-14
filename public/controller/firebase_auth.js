@@ -1,8 +1,14 @@
-import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-auth.js';
+import {
+	getAuth,
+	signInWithEmailAndPassword,
+	signOut,
+	onAuthStateChanged,
+	createUserWithEmailAndPassword,
+} from 'https://www.gstatic.com/firebasejs/9.6.2/firebase-auth.js';
 import * as Elements from '../viewpage/elements.js';
 import * as Util from '../viewpage/util.js';
 import * as Constants from '../model/constants.js';
-import { routing } from './route.js';
+import { routePath, routing } from './route.js';
 import * as WelcomeMessage from '../viewpage/welcome_message.js';
 
 const auth = getAuth();
@@ -28,11 +34,31 @@ export function addEventListeners() {
 		}
 	});
 
+	Elements.formCreateAccount.addEventListener('submit', async (e) => {
+		e.preventDefault();
+		const email = e.target.email.value;
+		const password = e.target.password.value;
+		const passwordConfirmed = e.target.passwordConfirm.value;
+
+		if (password !== passwordConfirmed) {
+			alert('passwords provided do not match');
+			return;
+		}
+
+		try {
+			await createUserWithEmailAndPassword(auth, email, password);
+			e.target.reset();
+			Util.info('Account Created!', `You are now signed in as ${email}`, Elements.modalCreateAccount);
+		} catch (e) {
+			if (Constants.DEV) console.log(e);
+			Util.info('Failed to create account', JSON.stringify(e));
+		}
+	});
+
 	Elements.menuSignOut.addEventListener('click', async () => {
 		// sign out from Firebase Auth
 		try {
 			await signOut(auth);
-			console.log('sign out success');
 		} catch (error) {
 			Util.info('SIgn Out Error', JSON.stringify(error));
 			if (Constants.DEV) {
@@ -70,6 +96,7 @@ function authStateChangedObserver(user) {
 		for (let i = 0; i < elements.length; i++) {
 			elements[i].style.display = 'none';
 		}
+		history.pushState(null, null, routePath.HOME);
 		Elements.root.innerHTML = WelcomeMessage.html;
 	}
 }
