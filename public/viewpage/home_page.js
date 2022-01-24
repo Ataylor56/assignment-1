@@ -85,11 +85,6 @@ export async function home_page() {
 
 export function buildHomeScreen(threadList) {
 	let html = '';
-	html += `
-    <button class="btn btn-outline-success btn-circle" data-bs-toggle="modal" data-bs-target="#modal-create-thread">
-    + New Thread
-    </button>
-    `;
 
 	html += `
         <table class="table table-striped">
@@ -119,6 +114,13 @@ export function buildHomeScreen(threadList) {
 	if (threadList.length == 0) {
 		html += '<h4 id="no-thread-found" class="d-flex p-3 justify-content-center">No threads found</h4>';
 	}
+	html += `
+	<div class="d-flex justify-content-center">
+		<button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal-create-thread">
+		+ New Thread
+		</button>
+	</div>
+    `;
 
 	Elements.root.innerHTML = html;
 
