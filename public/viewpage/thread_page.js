@@ -48,11 +48,19 @@ export async function thread_page(threadId) {
 	}
 
 	let html = `
-        <h4 class="bg-primary text-white">${thread.title}</h4>
-        <div>
-            ${thread.email} (At ${new Date(thread.timestamp).toString()})
-        </div>
-        <div class="bg-secondary text-white">${thread.content}</div>
+		<div class="shadow-lg">
+			<div class="bg-primary text-white rounded-top">
+				<h6 class="pt-1 px-2">Post:</h6>
+				<h4 class="text-white px-2 fw-bolder">${thread.title}</h4>
+				<div class="text-white p-2">
+					<text class="text-black fw-bolder">(user)</text> <b> ${thread.email} </b> (At ${new Date(thread.timestamp).toString()})
+				</div>
+			</div>
+			<div class="bg-secondary text-white rounded-bottom">
+				<h6 class="pt-1 px-2">Post Content</h6>
+				<div class="p-3 fw-bolder">${thread.content}</div>
+			</div>
+		</div>
         <hr>
     `;
 
@@ -114,11 +122,13 @@ export async function thread_page(threadId) {
 
 function buildReplyView(reply) {
 	return `
-        <div class="border border-primary">
-            <div class="bg-info text-white">
-                Replied by ${reply.email} (At ${new Date(reply.timestamp).toString()})
+        <div class="border border-primary rounded">
+            <div class="bg-info text-white p-2">
+                <b>Reply by ${reply.email}</b> (At ${new Date(reply.timestamp).toString()})
             </div>
+			<div class="p-2">
             ${reply.content}
+			</div>
         </div>
         <hr>
     `;
