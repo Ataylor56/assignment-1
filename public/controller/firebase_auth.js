@@ -49,9 +49,10 @@ export function addEventListeners() {
 			await createUserWithEmailAndPassword(auth, email, password);
 			e.target.reset();
 			Util.info('Account Created!', `You are now signed in as ${email}`, Elements.modalCreateAccount);
-		} catch (e) {
-			if (Constants.DEV) console.log(e);
-			Util.info('Failed to create account', JSON.stringify(e));
+		} catch (error) {
+			if (Constants.DEV) console.log(error);
+			e.target.reset();
+			Util.info('Failed to create account', JSON.stringify(error.code), Elements.modalCreateAccount);
 		}
 	});
 
